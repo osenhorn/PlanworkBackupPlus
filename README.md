@@ -1,6 +1,10 @@
 # PlanworkBackupPlus
 
-AINDA EM DESENVOLVIMENTO, NÃO ESTÁ PRONTO PARA USO!!
+AINDA EM DESENVOLVIMENTO, NÃO ESTÁ PRONTO PARA USO!
+
+Este software usa a licença General Public License (GPL) Versão 3. Para ler a licença, clique no link abaixo:
+
+https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
 Software desenvolvido em Python 3.10, usando KivyMD para interface gráfica, SQLite para o armazenamento das configurações, além de integração com o Google Drive e One Drive. Foi especialmente criado para o backup dos bancos de dados utilizados pelo software ERP Evolution.
 
