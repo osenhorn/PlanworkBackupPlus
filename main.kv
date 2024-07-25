@@ -1,0 +1,335 @@
+Manager:
+    Cadastro:
+        id: cad1
+    Complementares:
+        id: cad2
+    Principal:
+
+<Cadastro>:
+    id: tela_cadastro
+    name: "tela_cadastro"
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: 1, 1, 1, 1
+        spacing: root.width*0.007
+        padding: [40, 40, 40, 40]
+        MDLabel:
+            text: "Cadastro"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+            halign: 'center'
+            theme_text_color: 'Custom'
+            text_color: 40/255.0, 90/255.0, 140/255.0, 1
+            font_size: root.width*0.06
+        MDTextField:
+            id: servidor
+            write_tab: False
+            hint_text: 'Servidor (Ex.: 127.0.0.1)'
+            icon_right: 'server'
+            size_hint_x: None
+            width: root.width*0.7
+            font_size: "14sp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDTextField:
+            id: usuario
+            write_tab: False
+            hint_text: 'Usuário (Ex.: sa)'
+            icon_right: 'account'
+            size_hint_x: None
+            width: root.width*0.7
+            font_size: "14sp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDGridLayout:
+            cols: 2
+            size_hint: (None, None)
+            width: root.width*0.2
+            height: root.height*0.1
+            pos_hint: {'center_x': 0.222}
+            MDTextField:
+                id: senha
+                write_tab: False
+                hint_text: 'Senha'
+                size_hint_x: None
+                width: root.width*0.65
+                font_size: "14sp"
+                password: True
+            MDIconButton:
+                icon: "eye-off"
+                pos: root.ids.senha.width - self.width + dp(8), 0
+                theme_text_color: "Hint"
+                on_release:
+                    self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                    root.ids.senha.password = False if root.ids.senha.password is True else True
+        MDTextField:
+            id: prefixo
+            write_tab: False
+            hint_text: 'Prefixo do banco (Ex.: sfb_)'
+            icon_right: 'database'
+            size_hint_x: None
+            width: root.width*0.7
+            font_size: "14sp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDTextField:
+            id: cliente
+            write_tab: False
+            hint_text: 'Nome do cliente'
+            icon_right: 'factory'
+            size_hint_x: None
+            width: root.width*0.7
+            font_size: "14sp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDTextField:
+            id: numbackups
+            write_tab: False
+            hint_text: 'Nº de backups'
+            icon_right: 'calendar-month'
+            size_hint_x: None
+            width: root.width*0.7
+            font_size: "14sp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDGridLayout:
+            cols: 3
+            size_hint: (None, None)
+            width: root.width*0.4
+            height: root.height*0.07
+            spacing: "10dp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            MDAnchorLayout:
+                anchor_x: 'left'
+                anchor_y: 'bottom'
+                MDFillRoundFlatButton:
+                    text: 'Limpar campos'
+                    font_size: root.height*0.025
+                    _min_width: root.width*0.13
+                    _min_height: root.height*0.07
+                    md_bg_color: 0, 167/255.0, 1, 1
+                    text_color: 1, 1, 1, 1
+                    on_release:
+                        root.limpar()
+            MDAnchorLayout:
+                anchor_x: 'right'
+                anchor_y: 'bottom'
+                Widget:
+            MDAnchorLayout:
+                anchor_x: 'right'
+                anchor_y: 'bottom'
+                MDFillRoundFlatButton:
+                    text: 'Próximo'
+                    font_size: root.height*0.025
+                    _min_width: root.width*0.13
+                    _min_height: root.height*0.07
+                    md_bg_color: 0, 167/255.0, 1, 1
+                    text_color: 1, 1, 1, 1
+                    on_release:
+                        root.proximo()
+                        root.manager.transition.direction = "left"
+
+<Complementares>:
+    id: tela_complementar
+    name: "tela_complementar"
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: 1, 1, 1, 1
+        spacing: root.width*0.007
+        padding: [40, 40, 40, 40]
+        MDLabel:
+            text: "Cadastro"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+            halign: 'center'
+            theme_text_color: 'Custom'
+            text_color: 40/255.0, 90/255.0, 140/255.0, 1
+            font_size: root.width*0.06
+        MDAnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'bottom'
+            Widget:
+        MDGridLayout:
+            cols: 2
+            size_hint: (None, None)
+            spacing: 60
+            width: 470
+            height: root.height*0.1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            MDAnchorLayout:
+                anchor_x: 'right'
+                anchor_y: 'center'
+                MDLabel:
+                    id: legenda
+                    text: "Sincronizar com a nuvem?"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            MDAnchorLayout:
+                anchor_x: 'left'
+                anchor_y: 'center'
+                MDFillRoundFlatButton:
+                    id: nuvem
+                    text: 'Selecione o serviço'
+                    font_size: "16sp"
+                    md_bg_color: 40/255.0, 90/255.0, 140/255.0, 1
+                    text_color: 1, 1, 1, 1
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    on_release:
+                        root.ids.legenda.text="Sincronizar com a nuvem?"
+                        root.ids.nuvem.text='Selecione o serviço'
+                        root.menu.caller=root.ids.nuvem
+                        root.menu.open()
+        MDAnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'bottom'
+            Widget:
+        MDGridLayout:
+            cols: 2
+            size_hint: (None, None)
+            spacing: 60
+            width: 470
+            height: root.height*0.1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            MDAnchorLayout:
+                anchor_x: 'left'
+                anchor_y: 'center'
+                MDFillRoundFlatButton:
+                    id: btndiretorio
+                    text: 'Selecione a pasta'
+                    font_size: "16sp"
+                    md_bg_color: 40/255.0, 90/255.0, 140/255.0, 1
+                    text_color: 1, 1, 1, 1
+                    pos_hint: {'center_x': 0.2, 'center_y': 0.5}
+                    on_release: root.seleciona_pasta()
+            MDAnchorLayout:
+                anchor_x: 'right'
+                anchor_y: 'center'
+                MDTextField:
+                    id: diretorio
+                    disabled: True
+                    write_tab: False
+                    hint_text: 'Diretório de backup'
+                    icon_left: 'folder'
+                    size_hint_x: None
+                    width: 200
+                    font_size: "11sp"
+                    pos_hint: {'center_x': 0.7, 'center_y': 0.5}
+        MDAnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'bottom'
+            Widget:
+        MDGridLayout:
+            cols: 2
+            size_hint: (None, None)
+            spacing: 60
+            width: 470
+            height: root.height*0.1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            MDAnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                MDLabel:
+                    text: "Deseja compactar o backup?"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            MDAnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                MDSwitch:
+                    id: compactar
+                    widget_style: "android"
+                    track_color_active: 85/255.0, 176/255.0, 82/255.0, 0.4
+                    track_color_inactive: 176/255.0, 82/255.0, 82/255.0, 0.4
+                    thumb_color_active: 85/255.0, 176/255.0, 82/255.0, 0.8
+                    thumb_color_inactive: 176/255.0, 82/255.0, 82/255.0, 0.8
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDAnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'bottom'
+            Widget:
+        MDGridLayout:
+            cols: 3
+            size_hint: (None, None)
+            width: root.width*0.4
+            height: root.height*0.1
+            spacing: "10dp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            MDAnchorLayout:
+                anchor_x: 'right'
+                anchor_y: 'bottom'
+                MDFillRoundFlatButton:
+                    text: 'Voltar'
+                    font_size: root.height*0.025
+                    _min_width: root.width*0.13
+                    _min_height: root.height*0.07
+                    md_bg_color: 0, 167/255.0, 1, 1
+                    text_color: 1, 1, 1, 1
+                    on_release:
+                        root.manager.transition.direction = "right"
+                        app.root.current='tela_cadastro'
+            MDAnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'bottom'
+                Widget:
+            MDAnchorLayout:
+                anchor_x: 'right'
+                anchor_y: 'bottom'
+                MDFillRoundFlatButton:
+                    text: 'Salvar'
+                    font_size: root.height*0.025
+                    _min_width: root.width*0.13
+                    _min_height: root.height*0.07
+                    md_bg_color: 0, 167/255.0, 1, 1
+                    text_color: 1, 1, 1, 1
+                    on_release:
+                        root.salvar()
+                        root.manager.transition.direction = "right"
+
+<Principal>:
+    id: tela_principal
+    name: "tela_principal"
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: 1, 1, 1, 1
+        spacing: root.width*0.007
+        padding: [100, 100, 100, 200]
+        MDLabel:
+            text: "O que deseja fazer?"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+            halign: 'center'
+            theme_text_color: 'Custom'
+            text_color: 40/255.0, 90/255.0, 140/255.0, 1
+            font_size: '30dp'
+        MDGridLayout:
+            cols: 3
+            size_hint: (None, None)
+            width: root.width*0.6
+            height: root.height*0.1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            MDFillRoundFlatButton:
+                text: 'Novo backup manual'
+                font_size: "16sp"
+                _min_width: 90
+                md_bg_color: 0, 167/255.0, 1, 1
+                text_color: 1, 1, 1, 1
+                on_release: root.novo_backup()
+            MDAnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'bottom'
+                Widget:
+            MDFillRoundFlatButton:
+                text: 'Alterar configurações'
+                font_size: "16sp"
+                _min_width: 90
+                md_bg_color: 0, 167/255.0, 1, 1
+                text_color: 1, 1, 1, 1
+                on_release: app.root.current='tela_cadastro'
+
+<Progresso>
+    id: tela_progresso
+    size_hint: None, None
+    size: 200, 200
+    pos_hint: {"center_x": .5, "center_y": .5}
+    canvas.before:
+        Color:
+            rgba: root.bar_color + [0.3]
+        Line:
+            width: root.bar_width
+            ellipse: (self.x, self.x, self.width, self.height, 0, 360)
+    canvas.after:
+        Color:
+            rgb: root.bar_color
+        Line:
+            width: root.bar_width
+            ellipse: (self.x, self.x, self.width, self.height, 0, root.set_value*3.6)
