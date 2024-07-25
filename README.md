@@ -11,4 +11,25 @@ Abaixo estão as telas já implementadas no software:
 
 Primeira tela do cadastro:
 
-![Texto Alternativo](URL_da_Imagem)
+![Tela inicial de cadastro](https://github.com/osenhorn/PlanworkBackupPlus/blob/master/prints/1.png)
+
+Exibição da senha digitada:
+
+![Exibição da senha digitada](https://github.com/osenhorn/PlanworkBackupPlus/blob/master/prints/2.png)
+
+Tela complementar de cadastro:
+
+![Tela complementar de cadastro](https://github.com/osenhorn/PlanworkBackupPlus/blob/master/prints/3.png)
+
+Seleção do serviço cloud
+
+![Seleção do serviço cloud](https://github.com/osenhorn/PlanworkBackupPlus/blob/master/prints/4.png)
+
+Seleção do diretório onde o backup será salvo:
+
+![Seleção do diretório onde o backup será salvo](https://github.com/osenhorn/PlanworkBackupPlus/blob/master/prints/5.png)
+
+Tela principal, após salvar as configurações:
+
+![Tela principal, após salvar as configurações](https://github.com/osenhorn/PlanworkBackupPlus/blob/master/prints/6.png)
+
