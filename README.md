@@ -1,6 +1,6 @@
 # PlanworkBackupPlus
 
-AINDA EM DESENVOLVIMENTO, NÃO ESTÁ PRONTO PARA USO ME PRODUÇÃO!
+AINDA EM DESENVOLVIMENTO, NÃO ESTÁ PRONTO PARA USO EM PRODUÇÃO!
 
 Este software usa a licença General Public License (GPL) Versão 3. Para ler a licença, clique no link abaixo:
 
