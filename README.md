@@ -35,4 +35,3 @@ Seleção do diretório onde o backup será salvo:
 Tela principal, após salvar as configurações:
 
 ![Tela principal, após salvar as configurações](https://github.com/osenhorn/PlanworkBackupPlus/blob/master/prints/6.png)
-
